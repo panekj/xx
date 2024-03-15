@@ -1,5 +1,5 @@
 variable "TARGET_REPO" {
-    default = "tonistiigi/bats-assert"
+    default = "ghcr.io/panekj/bats-assert"
 }
 
 target "default" {

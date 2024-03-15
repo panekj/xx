@@ -1,5 +1,5 @@
 variable "XX_REPO" {
-    default = "tonistiigi/xx"
+    default = "ghcr.io/panekj/xx"
 }
 
 variable "TEST_BASE_TYPE" {
@@ -186,7 +186,7 @@ target "sdk-extras-dev" {
 target "_ld-base" {
     context = "src/ld"
     contexts = {
-        "tonistiigi/xx" = "target:xx"
+        "ghcr.io/panekj/xx" = "target:xx"
     }
 }
 
@@ -293,7 +293,7 @@ target "ld-static-tgz" {
 target "compiler-rt" {
     context = "src/llvm"
     contexts = {
-        "tonistiigi/xx" = "target:xx"
+        "ghcr.io/panekj/xx" = "target:xx"
     }
     target = "compiler-rt"
     platforms = [
@@ -305,7 +305,7 @@ target "compiler-rt" {
 target "libcxx" {
     context = "src/llvm"
     contexts = {
-        "tonistiigi/xx" = "target:xx"
+        "ghcr.io/panekj/xx" = "target:xx"
     }
     target = "libcxx"
     platforms = [
@@ -318,7 +318,7 @@ target "dev" {
     context = "src"
     target = "dev"
     contexts = {
-        "tonistiigi/xx" = "target:xx"
+        "ghcr.io/panekj/xx" = "target:xx"
         "sdk-extras" = DEV_SDK_PLATFORM != null ? "target:sdk-extras-dev" : "docker-image://scratch"
         "ld64" = DEV_WITH_LD64 != "" ? "target:ld64" : "docker-image://scratch"
     }
@@ -336,7 +336,7 @@ target "lipo" {
     context = "src/ld"
     target = "lipo-static"
     contexts = {
-        "tonistiigi/xx" = "target:xx"
+        "ghcr.io/panekj/xx" = "target:xx"
     }
     platforms = [
         "linux/amd64",
@@ -349,7 +349,7 @@ target "sigtool" {
     context = "src/ld"
     target = "sigtool-static"
     contexts = {
-        "tonistiigi/xx" = "target:xx"
+        "ghcr.io/panekj/xx" = "target:xx"
     }
     platforms = [
         "linux/amd64",

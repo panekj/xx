@@ -2,7 +2,7 @@
 set -e
 
 : "${DIST=./bin/ld-static-tgz}"
-: "${GITHUB_REPOSITORY=tonistiigi/xx}"
+: "${GITHUB_REPOSITORY=ghcr.io/panekj/xx}"
 : "${GITHUB_RELEASE_TAG=prebuilt%2Fld-1}"
 
 cat >./src/xx-ld-shas <<EOL

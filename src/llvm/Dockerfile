@@ -1,6 +1,6 @@
 #syntax=docker/dockerfile:1.5
 
-FROM --platform=$BUILDPLATFORM tonistiigi/xx AS xx
+FROM --platform=$BUILDPLATFORM ghcr.io/panekj/xx AS xx
 
 FROM --platform=$BUILDPLATFORM alpine AS compiler-rt-build
 RUN apk add --no-cache git cmake clang lld make ninja python3 llvm

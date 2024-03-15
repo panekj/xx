@@ -6,5 +6,5 @@ if ! docker volume inspect xx-pkg-cache >/dev/null 2>&1; then
   docker volume create xx-pkg-cache >/dev/null 2>&1
 fi
 
-docker run -it --rm -v xx-pkg-cache:/pkg-cache tonistiigi/xx:dev
-docker rmi tonistiigi/xx:dev
+docker run -it --rm -v xx-pkg-cache:/pkg-cache ghcr.io/panekj/xx:dev
+docker rmi ghcr.io/panekj/xx:dev

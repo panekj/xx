@@ -185,19 +185,20 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            tonistiigi/xx
+            ghcr.io/panekj/xx
           tags: |
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
           bake-target: meta-helper
       -
-        name: Login to DockerHub
+        name: Login to GHCR
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
       -
         name: Build
         uses: docker/bake-action@v4
